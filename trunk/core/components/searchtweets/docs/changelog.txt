@@ -1,0 +1,5 @@
+Changelog file for SearchTweets component.
+
+SearchTweets 1.0
+====================================
+- Initial commit

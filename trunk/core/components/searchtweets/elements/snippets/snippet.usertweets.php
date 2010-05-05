@@ -51,7 +51,7 @@ if (!empty($r) && is_array($r)) {
 
         $ago = $searchtweets->getTimeAgo($tweet['created_at']);
 
-        $output .= $searchtweets->getChunk($tpl,array(
+        $tweetArray = array_merge($tweet,array(
             'username' => $tweet['user']['screen_name'],
             'userid' => $tweet['user_id'],
             'profileImageUrl' => $tweet['user']['profile_image_url'],
@@ -64,6 +64,7 @@ if (!empty($r) && is_array($r)) {
             'ago' => $ago,
             'source' => $tweet['source'],
         ));
+        $output .= $searchtweets->getChunk($tpl,$tweetArray);
         $idx++;
     }
 } else {
