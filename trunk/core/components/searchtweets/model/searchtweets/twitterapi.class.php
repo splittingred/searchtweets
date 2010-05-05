@@ -129,7 +129,7 @@ class TwitterApi {
             $request = 'http://twitter.com/statuses/user_timeline/' . urlencode($id) . '.' . $this->type . $qs;
         }
         $out = $this->process($request);
-        return $this->objectify($out);
+        return $this->modx->fromJSON($out);
     }
    
     /**
